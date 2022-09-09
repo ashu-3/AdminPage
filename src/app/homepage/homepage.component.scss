@@ -1,0 +1,207 @@
+$nav-bg-color : #6f9681;
+$white-color: #fff;
+$grey_black-color: #222;
+
+$side-nav-mat-color : rgb(125, 125, 186);
+$sub-heading-size:16px;
+$sidebar-bg-color: #404e67;
+
+@mixin main-block-border {
+    border: 2px solid #a6b5ad;
+}
+
+@mixin dark-theme {
+   // border: 2px solid #a6b5ad;
+    color: $white-color;
+    background-color: #333;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@mixin light-theme {
+  //  border: 2px solid #a6b5ad;
+    color: $grey_black-color;
+    background-color:rgb(246, 246, 246);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+$main-block-bg-color: rgb(202, 199, 199);
+$mian-sub-block-bg-color: rgb(246, 246, 246);
+
+// Dark theme
+
+$main-block-bg-color-dark: #222;
+$mian-sub-block-bg-color-dark: #222;
+
+mat-toolbar {
+    background-color: $nav-bg-color;
+    color:$white-color; 
+}
+.nav-options {
+   color: $white-color;
+   display: flex;
+   font-size: $sub-heading-size;
+   width: 100%;
+   justify-content: flex-end;
+   & > button  {  
+    margin-right: 35px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.header_icons {
+    border: 1px solid $white-color; 
+    border-radius: 50%; 
+    padding: 2px;  
+}
+
+.container {
+    height: 91%;
+    display: flex;
+}
+
+.sidebar-nav {
+    width:15%;
+    min-width: 15%;
+    height: 100%;
+    @include main-block-border;
+    transition: width 0.5s; 
+    background-color: $sidebar-bg-color;   
+}
+
+.sidebar-nav-min {
+    width:5%;
+    min-width: 5%;
+    @include main-block-border;
+    // height: 100vh;
+    transition: width 0.8s;
+    background-color: $sidebar-bg-color;
+    & > mat-toolbar > mat-icon {
+        display: flex;
+        justify-content:center;
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.sidebar-nav-mat-toolbar {
+    background-color: $side-nav-mat-color;
+    & > mat-icon {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.side-menu {
+    & > mat-icon {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+    }
+}
+
+.side-nav-header {
+    font-size: $sub-heading-size;
+}
+
+.sidebar-nav-options {
+    color: $white-color;
+    padding-bottom: 25px;
+    margin: 0;
+    transition: width 1s;
+    & > mat-icon {
+        margin: 25px 20px 0 20px;
+        vertical-align: bottom;
+        color: $white-color;
+    }
+    &:hover{
+        cursor: pointer;
+        background-color: #5a6982;
+        opacity: 0.9;
+    }
+}
+
+.sidebar-nav-options-min {
+    color: $white-color;
+    transition: width 1s;
+    text-align: center;
+    & > a > mat-icon {
+        margin: 30px 20px 0 25px;
+    }
+    &:hover{
+        cursor: pointer;
+        border-bottom: 1px solid $white-color;
+    }
+}
+
+.main-block-min {
+    width: 85%;
+    height: auto;
+    @include main-block-border;
+    margin: 2px;
+    background-color: $main-block-bg-color;
+}
+
+.main-block {
+    height: auto;
+    width: 95%;
+    @include main-block-border;
+    margin: 2px;
+    background-color:$main-block-bg-color ;
+}
+
+.default-main-block-light-theme {
+    height: 32%;
+    margin: 10px 10px;
+    //background-color: $mian-sub-block-bg-color;
+    @include light-theme;
+}
+
+.dynamic-main-block-light-theme {
+    height: 64%;
+    //background-color: $mian-sub-block-bg-color;
+    margin: 10px 10px 0 10px;
+    @include light-theme;
+}
+
+//RWD and media query
+
+@media only screen and (min-width: 300px) and (max-width: 920px){
+    .sidebar-nav-min {
+        width:15%;
+        min-width: 15%;
+    }
+}
+
+//dark-theme
+
+.default-main-block-dark-theme {
+    height: 32%;
+    margin: 10px 10px;
+    //background-color: $mian-sub-block-bg-color;
+    @include dark-theme;
+}
+
+.dynamic-main-block-dark-theme {
+    height: 64%;
+    //background-color: $mian-sub-block-bg-color;
+    margin: 10px 10px 0 10px;
+    @include dark-theme;
+}
+
+footer {
+    width :99vw;
+    height: 30px;
+    border-top: 1px solid rgb(98, 97, 97);
+    padding: 6px;
+    background-color: rgb(239, 239, 239);
+    margin-top: 5px;
+    & > p {
+        margin: 0 auto;
+        width: auto;
+    }
+}
