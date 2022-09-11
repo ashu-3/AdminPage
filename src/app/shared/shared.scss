@@ -1,0 +1,31 @@
+.google-chart {
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 10px;
+    height: 350px;
+    width:45%;
+    transform: translateX(5%);
+}
+
+
+//RWD and media query
+
+@media only screen and (min-width: 300px) and (max-width: 590px){
+    .google-chart {
+        display: block;
+        margin-left: 5px;
+        margin-top: 10px;
+        height: 200px;
+        width:250px
+    }
+}
+
+@media only screen and (min-width: 591px) and (max-width: 990px){
+    .google-chart {
+        display: inline-block;
+        margin-left: 50px;
+        margin-top: 10px;
+        height: 300px;
+        width:450px
+    }
+}

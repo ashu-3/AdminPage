@@ -70,6 +70,8 @@ mat-toolbar {
     background-color: $sidebar-bg-color;   
 }
 
+
+
 .sidebar-nav-min {
     width:5%;
     min-width: 5%;
@@ -108,17 +110,28 @@ mat-toolbar {
     font-size: $sub-heading-size;
 }
 
+.sidebar-div {
+    & > ul{
+       padding-left: 0;    
+    }
+}
+
 .sidebar-nav-options {
-    color: $white-color;
+    list-style: none;
     padding-bottom: 25px;
     margin: 0;
     transition: width 1s;
-    & > mat-icon {
-        margin: 25px 20px 0 20px;
+    & > a {
+        color: $white-color;
+        text-decoration: none;
+        padding: 20px 20px 20px 0;
+    }
+    & > a > mat-icon {
+        margin: 20px 20px 0 25px;
         vertical-align: bottom;
         color: $white-color;
     }
-    &:hover{
+    &:hover {
         cursor: pointer;
         background-color: #5a6982;
         opacity: 0.9;
@@ -129,8 +142,14 @@ mat-toolbar {
     color: $white-color;
     transition: width 1s;
     text-align: center;
+    & > a {
+        color: $white-color;
+        text-decoration: none;
+        padding: 10px 10px 15px 0;
+        
+    }
     & > a > mat-icon {
-        margin: 30px 20px 0 25px;
+        margin: 40px 20px 2px 25px;
     }
     &:hover{
         cursor: pointer;

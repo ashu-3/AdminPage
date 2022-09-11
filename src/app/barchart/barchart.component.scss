@@ -1,8 +1,1 @@
-.google-chart {
-    display: inline-block;
-    margin-left: 40px;
-    & > div {
-        height: 500px;
-        color: red;
-    }
-}
+@import '../shared/shared.scss';

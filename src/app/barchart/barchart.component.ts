@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChartType } from "angular-google-charts";
+import { SharedChartService } from '../shared-chart.service';
 
 declare let google:any
 
@@ -10,6 +11,9 @@ declare let google:any
   styleUrls: ['./barchart.component.scss']
 })
 export class BarchartComponent implements OnInit {
+
+  constructor(public router: Router, private chartser:SharedChartService) { }
+
   title1 = 'Browser market shares at a specific website, 2014';
   type1 = ChartType.BarChart;
   data1 = [
@@ -21,9 +25,9 @@ export class BarchartComponent implements OnInit {
      ['Others', 0.7] 
   ];
   columnName1s = ['Browser', 'Percentage'];
-  options1 = {   colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],is3D: true 
-  };
-  width1 = 550;
+  options1 = this.chartser.barOptions;
+  // width1 = 550;
+  // height1 = 450;
  
 
   title2 = 'Browser market shares at a specific website, 2014';
@@ -37,12 +41,11 @@ export class BarchartComponent implements OnInit {
      ['Others', 0.7] 
   ];
   columnNames2 = ['Browser', 'Percentage'];
-  options2 = {   colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],is3D: true 
-  };
-  width2 = 550;
-  
+  options2 = this.chartser.barOptions;
+  // width2 = 550;
+  // height2 = 450;  
 
-  constructor(public router: Router) { }
+  
 
   ngOnInit(): void {
     

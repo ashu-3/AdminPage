@@ -5,8 +5,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { PiechartComponent } from './piechart/piechart.component';
 
 const routes: Routes = [
-  {path:"barchart",component:BarchartComponent},
-  {path:"piechart",component:PiechartComponent},
+  // {path:"barchart",component:BarchartComponent},
+  // {path:"piechart",component:PiechartComponent},
   {path:"",redirectTo:"login",pathMatch:"full"},
   {path:"adminHome",component:HomepageComponent},
 ];

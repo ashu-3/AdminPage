@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BarchartComponent } from '../barchart/barchart.component';
+import { PiechartComponent } from '../piechart/piechart.component';
+import { navbarData } from './navbar-data';
+
 
 @Component({
   selector: 'app-homepage',
@@ -14,6 +18,12 @@ export class HomepageComponent implements OnInit {
   themeText = 'dark theme';
   isSmallMobileDevice: MediaQueryList = window.matchMedia("(max-width: 920px)");
 
+  //sidebar
+  navOptions = navbarData;
+
+  //dynamic component
+  dynamicComponent:any = BarchartComponent;
+
   constructor(public router : Router) {
     
    }
@@ -22,7 +32,10 @@ export class HomepageComponent implements OnInit {
     if(this.isSmallMobileDevice.matches) {
       this.status = false;
     }
+
+    console.log(this.navOptions);
   }
+
 
   toggleShow() {
     this.status = !this.status;
@@ -38,11 +51,17 @@ export class HomepageComponent implements OnInit {
         this.themeText = 'dark theme';
         this.theme = 'light-theme';
       }
-    }
+  }
 
-    barchart() {
-      console.log("within bar")
-      this.router.navigate(['/barchart'])
+  assignComponent(component: string) {
+    console.log(component);
+    if(component == 'barchart') {
+      this.dynamicComponent = BarchartComponent;
     }
+    else {
+      this.dynamicComponent = PiechartComponent
+    }
+  }
+
   
 }

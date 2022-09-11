@@ -24,46 +24,26 @@
                 <span class="side-nav-header" *ngIf="status">More Options</span>
                 <mat-icon class="menu" (click)="toggleShow()">reorder</mat-icon>
         </mat-toolbar>
-        <div *ngIf="status">
-            <p class="sidebar-nav-options">
-                <mat-icon> pie_chart</mat-icon><a>Pie charts</a>
-            </p>
-            <p class="sidebar-nav-options">
-                    <mat-icon> bar_chart</mat-icon><a>Bar charts</a>
-            </p>
-            <p class="sidebar-nav-options">
-                <mat-icon> table_chart</mat-icon><a>Tables</a>
-            </p>
-            <p class="sidebar-nav-options">
-                <mat-icon>history</mat-icon><a>History</a>
-            </p>
-            <p class="sidebar-nav-options">
-                <mat-icon>history</mat-icon><a>Pie charts</a>
-            </p>
-            <p class="sidebar-nav-options">
-                <mat-icon>history</mat-icon><a>Pie charts</a>
-            </p>
-        </div>
-        <div *ngIf="!status">
-            <p class="sidebar-nav-options-min"><a>
-                    <mat-icon> pie_chart</mat-icon>
-                </a></p>
-            <p class="sidebar-nav-options-min"><a>
-                    <mat-icon> bar_chart</mat-icon>
-                </a></p>
-            <p class="sidebar-nav-options-min"><a>
-                    <mat-icon> table_chart</mat-icon>
-                </a></p>
-            <p class="sidebar-nav-options-min"><a>
-                    <mat-icon> history</mat-icon>
-                </a></p>
-            <p class="sidebar-nav-options-min"><a>
-                    <mat-icon> pie_chart</mat-icon>
-                </a></p>
-            <p class="sidebar-nav-options-min"><a>
-                    <mat-icon> pie_chart</mat-icon>
-                </a></p>
-        </div>
+        
+        <div *ngIf="status" class="sidebar-div">
+            <ul>
+                <li class="sidebar-nav-options" *ngFor="let data of navOptions">
+                    <a class="side-nav-anchor" [routerLink]="" (click)="assignComponent(data.routeLink)">
+                        <mat-icon>{{data.icon}}</mat-icon>
+                        <span class="side-nav-span">{{data.label}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>    
+        <div *ngIf="!status" class="sidebar-div">
+            <ul>
+                <li class="sidebar-nav-options-min" *ngFor="let data of navOptions">
+                    <a class="side-nav-anchor" [routerLink]="" (click)="assignComponent(data.routeLink)">
+                        <mat-icon>{{data.icon}}</mat-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>        
     </div>
     
     <!-- Main UI -->
@@ -73,7 +53,7 @@
             <h4>dduhdsin ndiuhiud hiduh isudhiudshfishd isuhd isudhiu sdhusdhiu d hfiudhhd</h4>
         </div>
         <div class="dynamic-main-block-{{theme}}" id="dynamic-container">
-            <!-- <app-barchart></app-barchart> -->
+            <ng-container *ngComponentOutlet="dynamicComponent"></ng-container>
         </div>
 
     </div>
