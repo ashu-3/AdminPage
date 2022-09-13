@@ -1,21 +1,22 @@
-<mat-toolbar>
-    <span>My Application</span>
-    <div class="nav-options">
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"> <mat-icon class="header_icons">settings</mat-icon></button>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"><mat-icon class="header_icons">account_circle</mat-icon></button>
-    </div>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="toggleTheme()">
-          <mat-icon></mat-icon>
-          <span>{{themeText}}</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon></mat-icon>
-          <span>voice mail</span>
-        </button>
-      </mat-menu>
-</mat-toolbar>
-
+<div class="header">
+    <mat-toolbar>
+        <span>My Application</span>
+        <div class="nav-options">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"> <mat-icon class="header_icons">settings</mat-icon></button>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"><mat-icon class="header_icons">account_circle</mat-icon></button>
+        </div>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-element (click)="toggleTheme()">
+            <mat-icon></mat-icon>
+            <span>{{themeText}}</span>
+            </button>
+            <button mat-menu-element disabled>
+            <mat-icon></mat-icon>
+            <span>voice mail</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+</div>
 <div class="container" [ngClass]= "themeSelected? 'light-theme' : 'dark-theme'">
 
     <!-- SideBar -->
@@ -47,7 +48,7 @@
     </div>
     
     <!-- Main UI -->
-    <div [ngClass]="status ? 'main-block-min' : 'main-block'">
+    <div [ngClass]="status ? 'main-block' : 'main-block-min'">
         <div class="default-main-block-{{theme}}">
             <h3>sadlkkl lajdlajds;ijdlj dlajd lajd lkjd lkjdl ajd ksdj </h3>
             <h4>dduhdsin ndiuhiud hiduh isudhiudshfishd isuhd isudhiu sdhusdhiu d hfiudhhd</h4>

@@ -1,39 +1,8 @@
-$nav-bg-color : #6f9681;
-$white-color: #fff;
-$grey_black-color: #222;
-
-$side-nav-mat-color : rgb(125, 125, 186);
-$sub-heading-size:16px;
-$sidebar-bg-color: #404e67;
-
-@mixin main-block-border {
-    border: 2px solid #a6b5ad;
-}
-
-@mixin dark-theme {
-   // border: 2px solid #a6b5ad;
-    color: $white-color;
-    background-color: #333;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-@mixin light-theme {
-  //  border: 2px solid #a6b5ad;
-    color: $grey_black-color;
-    background-color:rgb(246, 246, 246);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-$main-block-bg-color: rgb(202, 199, 199);
-$mian-sub-block-bg-color: rgb(246, 246, 246);
-
-// Dark theme
-
-$main-block-bg-color-dark: #222;
-$mian-sub-block-bg-color-dark: #222;
+@import '../shared/shared.scss';
 
 mat-toolbar {
-    background-color: $nav-bg-color;
+    //background-color: $nav-bg-color;
+    background-color: $nav-bg-color2;
     color:$white-color; 
 }
 .nav-options {
@@ -158,7 +127,7 @@ mat-toolbar {
 }
 
 .main-block-min {
-    width: 85%;
+    width: 95%;
     height: auto;
     @include main-block-border;
     margin: 2px;
@@ -167,24 +136,25 @@ mat-toolbar {
 
 .main-block {
     height: auto;
-    width: 95%;
+    width: 85%;
     @include main-block-border;
     margin: 2px;
     background-color:$main-block-bg-color ;
 }
 
 .default-main-block-light-theme {
-    height: 32%;
+    height: 28%;
     margin: 10px 10px;
     //background-color: $mian-sub-block-bg-color;
     @include light-theme;
 }
 
 .dynamic-main-block-light-theme {
-    height: 64%;
+    height: 68%;
     //background-color: $mian-sub-block-bg-color;
     margin: 10px 10px 0 10px;
     @include light-theme;
+    overflow: auto;
 }
 
 //RWD and media query
@@ -194,22 +164,29 @@ mat-toolbar {
         width:15%;
         min-width: 15%;
     }
+
+    .sidebar-nav-options-min {
+        & > a > mat-icon {
+            margin: 25px 20px 5px 15px;
+        }
+    }
 }
 
 //dark-theme
 
 .default-main-block-dark-theme {
-    height: 32%;
+    height: 28%;
     margin: 10px 10px;
     //background-color: $mian-sub-block-bg-color;
     @include dark-theme;
 }
 
 .dynamic-main-block-dark-theme {
-    height: 64%;
+    height: 68%;
     //background-color: $mian-sub-block-bg-color;
     margin: 10px 10px 0 10px;
     @include dark-theme;
+    overflow: auto;
 }
 
 footer {

@@ -11,6 +11,8 @@ import { BarchartComponent } from './barchart/barchart.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { PiechartComponent } from './piechart/piechart.component';
 import { RouterModule } from '@angular/router';
+import { TablechartComponent } from './tablechart/tablechart.component';
+import { map, catchError } from 'rxjs/operators';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     HomepageComponent,
     BarchartComponent,
-    PiechartComponent
+    PiechartComponent,
+    TablechartComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
     BrowserAnimationsModule,
     GoogleChartsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

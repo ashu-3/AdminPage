@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BarchartComponent } from '../barchart/barchart.component';
 import { PiechartComponent } from '../piechart/piechart.component';
+import { TablechartComponent } from '../tablechart/tablechart.component';
 import { navbarData } from './navbar-data';
 
 
@@ -58,8 +59,12 @@ export class HomepageComponent implements OnInit {
     if(component == 'barchart') {
       this.dynamicComponent = BarchartComponent;
     }
+    else if(component == 'piechart') { 
+      this.dynamicComponent = PiechartComponent;
+    }
+
     else {
-      this.dynamicComponent = PiechartComponent
+      this.dynamicComponent = TablechartComponent;
     }
   }
 

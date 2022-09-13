@@ -8,6 +8,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 const materialComponents = [
@@ -19,7 +21,9 @@ const materialComponents = [
     MatMenuModule,
     MatBadgeModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule,
+    MatPaginatorModule
     
 ]
 @NgModule({

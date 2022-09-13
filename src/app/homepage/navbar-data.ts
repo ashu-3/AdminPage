@@ -12,7 +12,7 @@ export const navbarData = [
     },
 
     {
-        routeLink : 'tablehart',
+        routeLink : 'tablechart',
         label: 'Table Chart',
         icon: 'table_chart'
     },
